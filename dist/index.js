@@ -149,7 +149,7 @@ var fetchStandingsAction = {
     try {
       const league = runtime.getSetting("LEAGUE_ID") || "PL";
       const apiKey = runtime.getSetting("FOOTBALL_API_KEY");
-      if (!apiKey?.match(/^[a-f0-9]{32}$/i)) {
+      if (!(apiKey == null ? void 0 : apiKey.match(/^[a-f0-9]{32}$/i))) {
         elizaLogger2.error("Invalid API key format");
         return false;
       }
